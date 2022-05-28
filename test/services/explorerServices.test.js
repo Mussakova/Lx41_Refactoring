@@ -1,6 +1,5 @@
 const explorerService = require("../../lib/services/explorerSevice")
-const reader = require("../../lib/utils/reader")
-const explorers = reader.readJsonFile("explorers.json")
+const explorers = require("../../explorers.json")
 
 describe('Test para explorerService',()=>{
     test('1. Filtrar explorers por mission', ()=>{
@@ -15,9 +14,14 @@ describe('Test para explorerService',()=>{
         expect(explorersInNode.length).toBe(10)
     }),
     test('3. Obtener Usernames de Explorers por mission a la que pertenecen', ()=>{
-        const explorersInNode = explorerService.filterByMission(explorers, 'node')
-        const explorersInJava = explorerService.filterByMission(explorers, 'java' )
+        const explorersInNode = explorerService.getExplorersUsernamesByMission(explorers, 'node')
+        const explorersInJava = explorerService.getExplorersUsernamesByMission(explorers, 'java' )
         
-            expect().toBe()
+        for(let i=0; i<explorersInJava.length; i++){
+            expect(explorersInJava[i]).toMatch(/ajolonauta/)
+        }
+        for(let i = 0; i<explorersInNode.length; i++){
+            expect(explorersInNode[i]).toMatch(/ajolonauta/)
+        }
         })
 })
