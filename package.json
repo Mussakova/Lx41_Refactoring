@@ -1,0 +1,24 @@
+{
+  "name": "refactoring",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./node_modules/.bin/jest",
+    "start": "node app.js",
+    "lint": "eslint"
+  },
+  "author": "Hirepan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.16.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^28.1.0",
+    "nodemon": "^2.0.16",
+    "prettier": "^2.6.2"
+  }
+}
